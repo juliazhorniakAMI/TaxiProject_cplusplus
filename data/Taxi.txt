@@ -1,0 +1,4 @@
+Mazda 920 green 200.000000
+Toyota 1222 black 220.000000
+Mercedes-bus 1111 silver 200.000000
+Skoda 1111 red 120.000000
