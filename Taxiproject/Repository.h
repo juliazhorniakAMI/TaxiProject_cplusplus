@@ -23,10 +23,7 @@ public:
 		T t;
 		return t.GetStorageName();
 	}
-	string GetStorageOutName() {
-		T t;
-		return t.GetStorageOutName();
-	}
+	
 	void ReadFromStorage();
 	void WriteToStorage();
 

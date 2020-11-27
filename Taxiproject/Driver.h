@@ -23,9 +23,7 @@ public:
 	string GetStorageName() {
 		return "C:\\oop\\Taxi_rep-master\\data\\Driver.txt";
 	}
-	string GetStorageOutName() {
-		return "Driverout.txt";
-	}
+
 	friend ifstream& operator>>(ifstream& fin, Driver& taxi);
 	friend ofstream& operator<<(ofstream& fout, Driver& taxi);
 };
