@@ -1,8 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <ostream>
-#include "Driver.h"
-#include "Taxi.h"
+#include "DriverCar.h"
+#include "DriverBus.h"
+#include "Car.h"
 #include "Client.h"
 
 #include "Vehicle.h"
@@ -42,8 +43,8 @@ void showMenu() {
 			cout << endl;
 			while (true) {
 				cout << "1 Add taxi cars " << endl;
-			
-				cout << "2 Exit" << endl;
+				cout << "2 Add taxi buses " << endl;
+				cout << "3 Exit" << endl;
 				cout << endl;
 
 				char user2;
@@ -60,15 +61,33 @@ void showMenu() {
 					int price;
 					cout << "Enter Make,number,color and max speed:" << endl;
 					cin >> make >> number >> color >> MaxSpeed;
-					Taxi t(make, number, color, MaxSpeed);
+					Car t(make, number, color, MaxSpeed);
 					cout << "Enter Driver name,rate and price:" << endl;
 					cin >> name >> rate >> price;
-					Driver d(name, rate, price);
+					DriverCar d(name, rate, price);
 					com.AddTaxi(t);
-					com.AddDriver(d);
+					com.Car_AddDriver(d);
 
 				}
 				
+				else if(user2=='2') {
+					string make;
+					int number;
+					string color;
+					float MaxSpeed;
+					string name;
+					int rate;
+					int price;
+					cout << "Enter Make,number,color and max speed:" << endl;
+					cin >> make >> number >> color >> MaxSpeed;
+					Bus t(make, number, color, MaxSpeed);
+					cout << "Enter Driver name,rate and price:" << endl;
+					cin >> name >> rate >> price;
+					DriverBus d(name, rate, price);
+					com.AddBus(t);
+					com.Bus_AddDriver(d);
+
+				}
 				else {
 					break;
 				}
@@ -92,6 +111,7 @@ void showMenu() {
 					com.showRate();
 				}
 				else if (user2 == 'B') {
+					
 					com.changeRate();
 				}
 				else {

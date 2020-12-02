@@ -1,7 +1,9 @@
 #ifndef COMMAND_H
 #define COMMAND_H
-#include "Taxi.h"
-#include "Driver.h"
+#include "Car.h"
+#include "Bus.h"
+#include "DriverCar.h"
+#include "DriverBus.h"
 #include "Person.h"
 
 #include "Vehicle.h"
@@ -18,10 +20,11 @@ class Command {
 
 public:
 
-	Repository<Taxi> taxiRepository = Repository<Taxi>(true);
+	Repository<Car> taxiRepository = Repository<Car>(true);
+	Repository<Bus> busRepository = Repository<Bus>(true);
 
-
-	Repository<Driver> driverRepository = Repository<Driver>(true);
+	Repository<DriverCar> car_driverRepository = Repository<DriverCar>(true);
+	Repository<DriverBus> bus_driverRepository = Repository<DriverBus>(true);
 
 	void Print();
 
@@ -29,8 +32,12 @@ public:
 
 
 	void WriteAllDrivers();
-	void AddTaxi(Taxi& taxi);
-	void AddDriver(Driver&);
+	void AddTaxi(Car& taxi);
+	void AddBus(Bus& bus);
+
+	void Car_AddDriver(DriverCar& driver);
+	void Bus_AddDriver(DriverBus& driver);
+
 
 
 	void showRate();

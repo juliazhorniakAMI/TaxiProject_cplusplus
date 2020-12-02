@@ -1,25 +1,21 @@
-#include "Driver.h"
-#include "Taxi.h"
+#include "DriverCar.h"
+#include "Car.h"
 //#include "Command.h"
 #include "Person.h"
 #include <iostream>
 #include <string>
 using namespace std;
 
-Driver::Driver(string name, int rate, int price) :Person(name)
+DriverCar::DriverCar(string name, int rate, int price) :Person(name) {
 
-{
-
-
+	this->name = name;
 	this->rate = rate;
 	this->price = price;
-
-
 }
 
-void Driver::Write() {
+void DriverCar::Write() {
 
-	cout << "            Info of the driver: " << endl;
+	//cout << "            Info of the driver: " << endl;
 
 	cout << "name: " << name << " \nResidence: " << residence << " \nRate: " << rate << endl;
 	cout << "Price: " << price << endl;
@@ -28,7 +24,7 @@ void Driver::Write() {
 
 
 }
-ifstream& operator>>(ifstream& fin, Driver& driver) {
+ifstream& operator>>(ifstream& fin, DriverCar& driver) {
 
 	string name;
 	int rate;
@@ -36,18 +32,19 @@ ifstream& operator>>(ifstream& fin, Driver& driver) {
 
 
 
+
 	fin >> name >> rate >> price;
-	
-		driver.name = name;
-		driver.rate = rate;
-		driver.price = price;
-	
+
+	driver.name = name;
+	driver.rate = rate;
+	driver.price = price;
+
 
 	return fin;
 }
 
 
-ofstream& operator<<(ofstream& fout, Driver& driver) {
+ofstream& operator<<(ofstream& fout, DriverCar& driver) {
 	fout << driver.GetInfo();//адреси зберігає
 	return fout;
 }

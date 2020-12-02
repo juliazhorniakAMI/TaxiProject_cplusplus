@@ -1,31 +1,97 @@
-#ifndef DRIVER_H
-#define DRIVER_H
-#include "Person.h"
-#include "Client.h"
-#include "Taxi.h"
-#include <string>
+#pragma once
 #include <iostream>
-#include <fstream>
+#include <string>
+
 using namespace std;
-class Driver :public Person {
-
-
-	int price;
+//Component
+class Driver
+{
 public:
+ 
+    virtual void Info_Elem() = 0;
+    virtual ~Driver() { }
 
-	int rate;
-	Driver(string name = "", int rate = 0, int price = 0);
-	string GetInfo() {
-
-		return name + " " + to_string(rate) + " " + to_string(price);
-	}
-	void Write();
-	string GetStorageName() {
-		return "C:\\oop\\Taxi_rep-master\\data\\Driver.txt";
-	}
-
-	friend ifstream& operator>>(ifstream& fin, Driver& taxi);
-	friend ofstream& operator<<(ofstream& fout, Driver& taxi);
 };
-#endif
+
+
+// ConcreteComponent
+template <class T>
+class SimpleDriver : public Driver
+{
+private:
+    T tmp;
+
+   
+public:
+    SimpleDriver(T tmp) {
+        this->tmp = tmp;
+    }
+
+
+    virtual void Info_Elem()
+    {
+        tmp.Write();
+    }
+
+};
+//Decorator
+class driverDecorator : public Driver
+{
+private:
+    Driver& m_Decorator;
+public:
+    driverDecorator(Driver& decorator) :m_Decorator(decorator)
+    {
+
+    }
+
+   
+    virtual void Info_Elem()
+    {
+        m_Decorator.Info_Elem();
+    }
+};
+
+
+
+// ConcreteDecoratorA
+class driver_car_decorator : public driverDecorator
+{
+
+public:
+    driver_car_decorator(Driver& decorator) :driverDecorator(decorator)
+    {
+
+    }
+ 
+    virtual void Info_Elem()
+    {
+        cout << " _____AVAILABLE CAR DRIVER______: " << endl;
+        driverDecorator::Info_Elem();
+
+    }
+
+};
+//ConcreteDecoratorB
+class driver_bus_decorator : public driverDecorator
+{
+
+public:
+    driver_bus_decorator(Driver& decorator) :driverDecorator(decorator)
+    {
+
+    }
+
+  
+    virtual void Info_Elem()
+    {
+        cout << " ____AVAILABLE BUS DRIVER_____: " << endl;
+        driverDecorator::Info_Elem();
+
+    }
+
+};
+
+
+
 

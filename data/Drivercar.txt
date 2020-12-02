@@ -1,0 +1,3 @@
+Oleg 3 200
+Ivan 3 150
+Andriy 5 120

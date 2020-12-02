@@ -139,15 +139,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bus.cpp" />
     <ClCompile Include="Client.cpp" />
-    <ClCompile Include="Driver.cpp" />
-    <ClCompile Include="Taxi.cpp" />
+    <ClCompile Include="DriverBus.cpp" />
+    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="DriverCar.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bus.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Driver.h" />
+    <ClInclude Include="DriverBus.h" />
+    <ClInclude Include="DriverCar.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Repository.h" />
+    <ClInclude Include="Car.h" />
     <ClInclude Include="Taxi.h" />
     <ClInclude Include="Vehicle.h" />
   </ItemGroup>

@@ -24,10 +24,16 @@
     <ClCompile Include="Client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Driver.cpp">
+    <ClCompile Include="Bus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Taxi.cpp">
+    <ClCompile Include="Car.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverCar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverBus.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,13 +41,7 @@
     <ClInclude Include="Person.h">
       <Filter>Header Files\Entitiies</Filter>
     </ClInclude>
-    <ClInclude Include="Taxi.h">
-      <Filter>Header Files\Entitiies</Filter>
-    </ClInclude>
     <ClInclude Include="Client.h">
-      <Filter>Header Files\Entitiies</Filter>
-    </ClInclude>
-    <ClInclude Include="Driver.h">
       <Filter>Header Files\Entitiies</Filter>
     </ClInclude>
     <ClInclude Include="Vehicle.h">
@@ -49,6 +49,24 @@
     </ClInclude>
     <ClInclude Include="Repository.h">
       <Filter>Header Files\Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="Bus.h">
+      <Filter>Header Files\Entitiies</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>Header Files\Entitiies</Filter>
+    </ClInclude>
+    <ClInclude Include="Taxi.h">
+      <Filter>Header Files\Entitiies</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverCar.h">
+      <Filter>Header Files\Entitiies</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverBus.h">
+      <Filter>Header Files\Entitiies</Filter>
+    </ClInclude>
+    <ClInclude Include="Driver.h">
+      <Filter>Header Files\Entitiies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

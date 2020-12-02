@@ -1,9 +1,9 @@
-#include "Taxi.h"
+#include "Car.h"
 
 //#include "Command.h"
 #include <iostream>
 using namespace std;
-Taxi::Taxi(string make, int number, string color, float MaxSpeed) :Vehicle(make, number, color, MaxSpeed) {
+Car::Car(string make, int number, string color, float MaxSpeed) :Vehicle(make, number, color, MaxSpeed) {
 
 
 
@@ -11,14 +11,14 @@ Taxi::Taxi(string make, int number, string color, float MaxSpeed) :Vehicle(make,
 };
 
 
-void Taxi:: Write() {
+void Car:: Write() {
 
-	cout << "_____Taxi information____: " << endl;
+	//cout << "_____Taxi information____: " << endl;
 
 	cout<<"Make: "<<make << " \nNumber: " << number << " \nColor: " << color << " \nMaxSpeed: " << MaxSpeed << endl<<endl;
 }
 
-ifstream& operator>>(ifstream& fin, Taxi& taxi) {
+ifstream& operator>>(ifstream& fin, Car& taxi) {
 	string make;
 	int number;
 	string color;
@@ -35,7 +35,7 @@ ifstream& operator>>(ifstream& fin, Taxi& taxi) {
 }
 
 
-ofstream& operator<<(ofstream& fout, Taxi& taxi) {
+ofstream& operator<<(ofstream& fout, Car& taxi) {
 	fout << taxi.GetInfo();//адреси зберігає
 	return fout;
 }

@@ -40,6 +40,10 @@ public:
 	}
 	Repository(bool sync = false);
 	~Repository();
+
+	void changerate(int ind,int rating) {
+		entity[ind].rate = rating;
+	}
 };
 
 
